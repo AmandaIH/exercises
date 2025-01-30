@@ -1,0 +1,15 @@
+main {
+  font-family: sans-serif;
+}
+button {
+  font-family: sans-serif;
+  color: white;
+  background-color: black;
+  border: none;
+  padding: 1%;
+  cursor: pointer;
+}
+#result {
+  font-size: larger;
+  text-decoration: underline;
+}
