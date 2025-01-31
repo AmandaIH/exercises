@@ -1,16 +1,20 @@
-"use strict";
-
 const output = document.querySelector("#result");
 const button = document.querySelector("button");
 
-let vat = 25;
+let input = document.querySelector("#amount").value;
+let taxprocent = 25;
 
 button.addEventListener("click", calculator);
 
-function calculator() {
-  let input = document.querySelector("#amount").value;
-  let vatresult = null;
+function calculator(tax, taxamount) {
+  input = parseInt(input);
 
-  vatresult = (input / 100) * vat;
-  output.textContent = vatresult;
+  tax = taxprocent / 100;
+
+  taxamount = input * tax;
+
+  taxresult = input + taxamount;
+
+  output.textContent = taxresult;
+  console.log("Result", taxresult);
 }
