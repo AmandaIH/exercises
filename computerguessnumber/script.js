@@ -2,12 +2,14 @@ let min = 0;
 let max = 100;
 
 let guessNumber;
+let counter = 0;
 
 const startButton = document.querySelector(".start");
 const lowButton = document.querySelector(".low");
 const highButton = document.querySelector(".high");
 const rightButton = document.querySelector(".right");
 const displayGuess = document.querySelector(".theguess");
+const displayCounter = document.querySelector(".count");
 
 window.addEventListener("load", start);
 
@@ -33,6 +35,7 @@ function start() {
 }
 
 function computerGuess() {
+  counter++;
   if (min > max) {
     disableButtons();
     return;
@@ -46,6 +49,7 @@ function computerGuess() {
 
 function celebrate() {
   displayGuess.textContent = `YAY! I guessed it ${guessNumber}`;
+  displayCounter.textContent = `I used ${counter} count(s)`;
   displayGuess.classList.add("celebrate-animation");
 
   const confetti = document.querySelector(".confetti");
