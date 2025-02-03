@@ -5,10 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computer guess number</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header>
+      <h2>Number guessing game</h2>
+    </header>
+    <main>
+      <div class="theGame">
+        <div class="textnum">
+          <p class="explanation">
+            Think of a number between 0-100, the computer will try to guess it.
+          </p>
+          <p class="theguess"></p>
+          <div class="buttons">
+            <button class="start">Start</button>
+            <button class="low">Too low</button>
+            <button class="high">Too high</button>
+            <button class="right">
+              Good job, computer!
+              <div class="confetti">
+                <dotlottie-player
+                  src="https://lottie.host/732adb25-a91b-48a4-893c-7491656477ad/dOXxZxftuj.lottie"
+                  background="transparent"
+                  speed="1"
+                  style="width: 100%; height: 100%"
+                  loop
+                  autoplay
+                ></dotlottie-player>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

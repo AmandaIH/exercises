@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+main {
+  background-color: grey;
+  height: 100vh;
+}
+p {
+  font-family: "Quicksand", serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+}
+h2 {
+  font-family: "Quicksand", serif;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  padding-top: 2%;
+  color: white;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+}
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 1%;
+  font-family: "Quicksand", serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  cursor: pointer;
+}
+.theGame {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 1fr 1fr;
+}
+.textnum {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  margin-top: 5%;
+  background-color: white;
+  padding: 10%;
+}
+.confetti {
+  display: none;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: none;
+}
+.explanation {
+  margin-bottom: 5%;
+}
+.right {
+  position: relative;
+}
