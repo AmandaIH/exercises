@@ -19,7 +19,7 @@ function lavsti() {
     } else {
       document.querySelector(
         "ul"
-      ).innerHTML += `<li><a href=${element.link}>${element.name}/</a></li>`;
+      ).innerHTML += `<li><a href=${element.link}>${element.name}</a> /&nbsp;</li>`;
     }
   });
 }
