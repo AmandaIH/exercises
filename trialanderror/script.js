@@ -270,3 +270,14 @@ if (student1 === student2) {
 } else {
   console.log("de er ikke ens");
 }
+
+//SWITCH case:
+// function beautify(str){
+// switch (str) {
+// case undefined:
+// break;
+// case true:
+// str = "X";
+// break;
+// }
+// return str;

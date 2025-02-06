@@ -38,18 +38,18 @@ const Jonas = vehicles.filter(
 
 const ryeBread = vehicles.filter((ryebread) => ryebread.isTandem === true);
 
-document.querySelector("body").innerHTML += `<button id="allbt">All</button>`;
+document.querySelector("div").innerHTML += `<button id="allbt">All</button>`;
 document.querySelector(
-  "body"
+  "div"
 ).innerHTML += `<button id="elbt">Electric</button>`;
 document.querySelector(
-  "body"
+  "div"
 ).innerHTML += `<button id="two">More than two passengers</button>`;
 document.querySelector(
-  "body"
-).innerHTML += `<button id="jonas">Owned by Jonas</button>`;
+  "div"
+).innerHTML += `<button id="jonas">Electric owned by Jonas</button>`;
 document.querySelector(
-  "body"
+  "div"
 ).innerHTML += `<button id="ryebread">Ryebread fuel</button>`;
 
 const tbodyPointer = document.querySelector("tbody");
@@ -125,6 +125,17 @@ function showTheseVehicles(arr) {
   // return str;
   // if (str === true) {
   // str = "X";
+  // }
+  // return str;
+
+  //hvis det skulle være en switch case:
+  // function beautify(str){
+  // switch (str) {
+  // case undefined:
+  // break;
+  // case true:
+  // str = "X";
+  // break;
   // }
   // return str;
 }
