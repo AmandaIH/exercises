@@ -28,57 +28,74 @@ const vehicles = [
   { type: "Løbehjul", passengers: 1, isElectric: true },
 ];
 
-const alleElDrevneFartoejer = vehicles.filter((veh) => veh.isElectric === true);
+// const alleElDrevneFartoejer = vehicles.filter((veh) => veh.isElectric === true);
 
-const twoPassengers = vehicles.filter((two) => two.passengers > 2);
+// const twoPassengers = vehicles.filter((two) => two.passengers > 2);
 
-const Jonas = vehicles.filter(
-  (jonas) => jonas.ownedBy === "Jonas" && jonas.isElectric === true
-);
+// const Jonas = vehicles.filter(
+//   (jonas) => jonas.ownedBy === "Jonas" && jonas.isElectric === true
+// );
 
-const ryeBread = vehicles.filter((ryebread) => ryebread.isTandem === true);
-
-document.querySelector("div").innerHTML += `<button id="allbt">All</button>`;
-document.querySelector(
-  "div"
-).innerHTML += `<button id="elbt">Electric</button>`;
-document.querySelector(
-  "div"
-).innerHTML += `<button id="two">More than two passengers</button>`;
-document.querySelector(
-  "div"
-).innerHTML += `<button id="jonas">Electric owned by Jonas</button>`;
-document.querySelector(
-  "div"
-).innerHTML += `<button id="ryebread">Ryebread fuel</button>`;
+// const ryeBread = vehicles.filter((ryebread) => ryebread.isTandem === true);
 
 const tbodyPointer = document.querySelector("tbody");
 showTheseVehicles(vehicles);
 
-const Allbt = document.querySelector("#allbt");
-Allbt.addEventListener("click", () => {
-  showTheseVehicles(vehicles);
+//det her bliver gjort med start inde i html med datafilter. Kortet koden meget ned
+document.querySelectorAll("button").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filterHandler(btn.dataset.filter);
+  });
 });
+function filterHandler(filter) {
+  let filterArr;
+  switch (filter) {
+    case "all":
+      filterArr = vehicles;
+      break;
+    case "electric":
+      filterArr = vehicles.filter((vehicles) => vehicles.isElectric === true);
+      break;
+    case "moreThanTwo":
+      filterArr = vehicles.filter((vehicles) => vehicles.passengers > 2);
+      break;
+    case "ownedByJonas":
+      filterArr = vehicles.filter(
+        (vehicles) =>
+          vehicles.ownedBy === "Jonas" && vehicles.isElectric === true
+      );
+      break;
+    case "ryebreadFuel":
+      filterArr = vehicles.filter((vehicles) => vehicles.isTandem === true);
+      break;
+  }
+  showTheseVehicles(filterArr);
+}
 
-const elbt = document.querySelector("#elbt");
-elbt.addEventListener("click", () => {
-  showTheseVehicles(alleElDrevneFartoejer);
-});
+// const Allbt = document.querySelector("#allbt");
+// Allbt.addEventListener("click", () => {
+//   showTheseVehicles(vehicles);
+// });
 
-const twobt = document.querySelector("#two");
-twobt.addEventListener("click", () => {
-  showTheseVehicles(twoPassengers);
-});
+// const elbt = document.querySelector("#elbt");
+// elbt.addEventListener("click", () => {
+//   showTheseVehicles(alleElDrevneFartoejer);
+// });
 
-const jonasbt = document.querySelector("#jonas");
-jonasbt.addEventListener("click", () => {
-  showTheseVehicles(Jonas);
-});
+// const twobt = document.querySelector("#two");
+// twobt.addEventListener("click", () => {
+//   showTheseVehicles(twoPassengers);
+// });
 
-const ryebreadbt = document.querySelector("#ryebread");
-ryebreadbt.addEventListener("click", () => {
-  showTheseVehicles(ryeBread);
-});
+// const jonasbt = document.querySelector("#jonas");
+// jonasbt.addEventListener("click", () => {
+//   showTheseVehicles(Jonas);
+// });
+
+// const ryebreadbt = document.querySelector("#ryebread");
+// ryebreadbt.addEventListener("click", () => {
+//   showTheseVehicles(ryeBread);
+// });
 
 function showTheseVehicles(arr) {
   tbodyPointer.innerHTML = "";
