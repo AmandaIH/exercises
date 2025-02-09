@@ -6,7 +6,9 @@ const transformed =
   "m" +
   different[1].slice(0, 2).toUpperCase() +
   different[1].slice(2);
+const real = str[0].toUpperCase() + str.slice(1);
 
 console.log(str.toUpperCase());
 console.log(str2.toLowerCase());
 console.log(transformed);
+console.log(real);
