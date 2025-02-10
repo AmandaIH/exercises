@@ -20,11 +20,11 @@ function start() {
     computerGuess();
   });
   lowButton.addEventListener("click", () => {
-    min = guessNumber + 1;
+    min = guessNumber + 1; //man kan godt undvære +1
     computerGuess();
   });
   highButton.addEventListener("click", () => {
-    max = guessNumber - 1;
+    max = guessNumber - 1; //man kan godt undvære -1
     computerGuess();
   });
   rightButton.addEventListener("click", () => {

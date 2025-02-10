@@ -125,6 +125,7 @@ function showTheseVehicles(arr) {
     }
   });
 
+  // condition ? exprIfTrue : exprIfFalse en komprimeret if sætning. En TERNARY
   // en anden måde at gøre det på, som Klaus synes er bedre:
 
   //<td>${beautify(each.type)}</td>
