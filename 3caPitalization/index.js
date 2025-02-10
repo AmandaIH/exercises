@@ -12,3 +12,9 @@ console.log(str.toUpperCase());
 console.log(str2.toLowerCase());
 console.log(transformed);
 console.log(real);
+console.log(
+  str.substring(0, 2).toLowerCase() +
+    str[2].toUpperCase() +
+    str.substring(3).toLowerCase()
+);
+console.log(str[0].toUpperCase() + str.substring(1).toLowerCase());
