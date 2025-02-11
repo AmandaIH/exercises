@@ -1,4 +1,3 @@
-// Definerer de "dårlige" og "gode" ord
 const curseWords = [
   { bad: "var", good: "<span class='highlight'>const</span>" },
   { bad: "float", good: "<span class='highlight'>grid</span>" },
@@ -11,20 +10,20 @@ const infoDialog = document.getElementById("infoDialog");
 const closeDialog = document.getElementById("closeDialog");
 
 replaceBtn.addEventListener("click", () => {
-  let text = textElement.innerHTML;
+  let words = textElement.innerHTML.split(" ");
   let updated = false;
 
-  // Erstat dårlige ord med gode ord
-  curseWords.forEach(({ bad, good }) => {
-    const regex = new RegExp(`\\b${bad}\\b`, "g");
-    if (text.match(regex)) {
+  let newWords = words.map((word) => {
+    let replacement = curseWords.find(({ bad }) => bad === word);
+    if (replacement) {
       updated = true;
-      text = text.replace(regex, good);
+      return replacement.good;
     }
+    return word;
   });
 
   if (updated) {
-    textElement.innerHTML = text;
+    textElement.innerHTML = newWords.join(" ");
   } else {
     infoDialog.showModal();
   }
