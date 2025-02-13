@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener(
     "mousemove",
     function () {
-      if (!hasInteracted) {
+      if (hasInteracted) {
         mouseMoved = true;
         clearTimeout(animationTimeout);
         button.classList.add("filled");
