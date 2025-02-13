@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  transition: background-color 1s;
+}
+.button-container {
+  position: relative;
+}
+.button {
+  position: relative;
+  padding: 15px 40px;
+  font-size: 20px;
+  color: white;
+  background: none;
+  border: 2px solid red;
+  cursor: pointer;
+  overflow: hidden;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: red;
+  transition: width 3s linear;
+}
+.button.filled::before {
+  width: 100%;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
